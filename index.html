@@ -531,7 +531,7 @@
           <div class="col-lg-5 col-md-8">
             <div class="form">
 
-              <form name="askme" onsubmit=return(myFunction()) action="https://script.google.com/macros/s/AKfycbyiSJxb-0IYfBcsSGts8vsDsRadTC7d-ykPSQRttw/exec" method="post" role="form" class="contactForm">
+              <form id="askme" name="askme" onsubmit=myFunction() action="https://script.google.com/macros/s/AKfycbyiSJxb-0IYfBcsSGts8vsDsRadTC7d-ykPSQRttw/exec" method="post" role="form" class="contactForm">
                 <div class="form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validation"></div>
@@ -574,8 +574,12 @@
                 return false;
               }
               window.alert("Question submitted");
-              window.location.href = "https://myvedicastro.github.io/";
-              return true;
+              
+              var myform = document.getElementById("askme");
+              myform.submit();
+
+              // document.getElementById("askme").reset();
+              // window.location.href = "file:///C:/Users/itsme/Desktop/ADS/Astrology/Regna/index.html";//"https://myvedicastro.github.io/";
               
               } 
             </script>
